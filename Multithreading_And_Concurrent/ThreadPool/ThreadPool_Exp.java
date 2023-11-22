@@ -1,0 +1,22 @@
+package Advance_Java.Multithreading_And_Concurrent;
+
+public class ThreadPool_Exp implements Runnable {
+    private String message;
+    public ThreadPool_Exp(String s){
+        this.message=s;
+    }
+    public void run(){
+        System.out.println(Thread.currentThread().getName()+" (Start) message = "+message);
+        processmessage();//call processmessage method that sleeps the thread for 2 seconds
+        System.out.println(Thread.currentThread().getName()+" (End)");//prints thread name
+
+
+
+    }
+    private void processmessage() {
+        try {  Thread.sleep(2000);  } catch (InterruptedException e) { e.printStackTrace(); }
+    }
+    public static void main(String[] args) {
+
+    }
+}
